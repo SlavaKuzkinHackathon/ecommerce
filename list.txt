@@ -1,7 +1,7 @@
 
 sudo npm i -g @nestjs/cli
 nest new server
-https://www.youtube.com/watch?v=dDeWWQWMM-Y 
+https://www.youtube.com/watch?v=dDeWWQWMM-Y  9.21
 
 
 https://github.com/NightClover-code/modern-ecommerce
