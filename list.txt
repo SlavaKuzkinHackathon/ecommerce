@@ -1,0 +1,10 @@
+
+sudo npm i -g @nestjs/cli
+nest new server
+https://www.youtube.com/watch?v=dDeWWQWMM-Y 
+
+
+https://github.com/NightClover-code/modern-ecommerce
+
+
+
