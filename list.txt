@@ -21,6 +21,12 @@ CREATE SCHEMA public;
 
 
 nest generate module users
+nest generate controller users
+nest generate service users
+
+npm i @nestjs/config
+npm i cross-env
+
 
 https://www.youtube.com/watch?v=dDeWWQWMM-Y  13,33
 
@@ -28,4 +34,16 @@ https://www.youtube.com/watch?v=dDeWWQWMM-Y  13,33
 https://github.com/NightClover-code/modern-ecommerce
 
 
-
+imports: [
+        SequelizeModule.forRoot({
+            dialect: 'postgres',
+            host: 'localhost',
+            port: 5432,
+            username: 'postgres',
+            password: 'slava',
+            database: 'm_p_test',
+            models: [],
+            autoLoadModels: true,
+        }),
+        UsersModule,
+    ]

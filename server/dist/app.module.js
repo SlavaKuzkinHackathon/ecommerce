@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
 const sequelize_1 = require("@nestjs/sequelize");
 const users_module_1 = require("./users/users.module");
 let AppModule = class AppModule {
@@ -17,13 +18,16 @@ AppModule = __decorate([
         controllers: [],
         providers: [],
         imports: [
+            config_1.ConfigModule.forRoot({
+                envFilePath: `.${process.env.NODE_ENV}.env`
+            }),
             sequelize_1.SequelizeModule.forRoot({
                 dialect: 'postgres',
-                host: 'localhost',
-                port: 5432,
-                username: 'postgres',
-                password: 'slava',
-                database: 'm_p_test',
+                host: process.env.POSTGRES_HOST,
+                port: Number(process.env.POSTGRESS_PORT),
+                username: process.env.POSTGRES_USER,
+                password: process.env.POSTGRESS_PASSWORD,
+                database: process.env.POSTGRES_DB,
                 models: [],
                 autoLoadModels: true,
             }),
