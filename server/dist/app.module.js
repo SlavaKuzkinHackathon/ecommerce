@@ -10,6 +10,7 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const sequelize_1 = require("@nestjs/sequelize");
+const users_model_1 = require("./users/users.model");
 const users_module_1 = require("./users/users.module");
 let AppModule = class AppModule {
 };
@@ -28,7 +29,7 @@ AppModule = __decorate([
                 username: process.env.POSTGRES_USER,
                 password: process.env.POSTGRESS_PASSWORD,
                 database: process.env.POSTGRES_DB,
-                models: [],
+                models: [users_model_1.User],
                 autoLoadModels: true,
             }),
             users_module_1.UsersModule,

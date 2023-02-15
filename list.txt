@@ -18,7 +18,7 @@ dropdb m_p_test
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 -удаление данных, и создание схемы в БД
-
+select * from users;
 
 nest generate module users
 nest generate controller users
@@ -27,8 +27,10 @@ nest generate service users
 npm i @nestjs/config
 npm i cross-env
 
+npm i @nestjs/swagger swagger-ui-express
 
-https://www.youtube.com/watch?v=dDeWWQWMM-Y  13,33
+
+https://www.youtube.com/watch?v=dDeWWQWMM-Y  26.04
 
 
 https://github.com/NightClover-code/modern-ecommerce
