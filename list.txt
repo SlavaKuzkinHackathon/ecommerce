@@ -1,7 +1,28 @@
 
 sudo npm i -g @nestjs/cli
 nest new server
-https://www.youtube.com/watch?v=dDeWWQWMM-Y  9.21
+
+npm install --save @nestjs/sequelize sequelize sequelize-typescript
+npm install --save pg pg-hstore
+npm install --save-dev @types/sequelize
+
+sudo su - postgres
+createdb m_p_test -O postgres
+
+psql m_p_test
+
+psql m_p_test
+\dt - таблицы в базе данных
+dropdb m_p_test
+
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+-удаление данных, и создание схемы в БД
+
+
+nest generate module users
+
+https://www.youtube.com/watch?v=dDeWWQWMM-Y  13,33
 
 
 https://github.com/NightClover-code/modern-ecommerce

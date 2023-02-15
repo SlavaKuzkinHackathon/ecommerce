@@ -8,14 +8,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
+const sequelize_1 = require("@nestjs/sequelize");
+const users_module_1 = require("./users/users.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService]
+        controllers: [],
+        providers: [],
+        imports: [
+            sequelize_1.SequelizeModule.forRoot({
+                dialect: 'postgres',
+                host: 'localhost',
+                port: 5432,
+                username: 'postgres',
+                password: 'slava',
+                database: 'm_p_test',
+                models: [],
+                autoLoadModels: true,
+            }),
+            users_module_1.UsersModule,
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;
