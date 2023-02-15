@@ -6,24 +6,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UsersModule = void 0;
+exports.RolesModule = void 0;
 const common_1 = require("@nestjs/common");
 const sequelize_1 = require("@nestjs/sequelize");
-const roles_model_1 = require("../roles/roles.model");
-const user_roles_model_1 = require("../roles/user-roles.model");
-const users_controller_1 = require("./users.controller");
-const users_model_1 = require("./users.model");
-const users_service_1 = require("./users.service");
-let UsersModule = class UsersModule {
+const users_model_1 = require("../users/users.model");
+const roles_controller_1 = require("./roles.controller");
+const roles_model_1 = require("./roles.model");
+const roles_service_1 = require("./roles.service");
+const user_roles_model_1 = require("./user-roles.model");
+let RolesModule = class RolesModule {
 };
-UsersModule = __decorate([
+RolesModule = __decorate([
     (0, common_1.Module)({
-        controllers: [users_controller_1.UsersController],
-        providers: [users_service_1.UsersService],
+        controllers: [roles_controller_1.RolesController],
+        providers: [roles_service_1.RolesService],
         imports: [
-            sequelize_1.SequelizeModule.forFeature([users_model_1.User, roles_model_1.Role, user_roles_model_1.UserRoles])
+            sequelize_1.SequelizeModule.forFeature([roles_model_1.Role, users_model_1.User, user_roles_model_1.UserRoles])
         ]
     })
-], UsersModule);
-exports.UsersModule = UsersModule;
-//# sourceMappingURL=users.module.js.map
+], RolesModule);
+exports.RolesModule = RolesModule;
+//# sourceMappingURL=roles.module.js.map
