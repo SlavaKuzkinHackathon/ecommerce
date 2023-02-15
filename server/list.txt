@@ -34,7 +34,7 @@ npm i cross-env
 npm i @nestjs/swagger swagger-ui-express
 
 
-https://www.youtube.com/watch?v=dDeWWQWMM-Y  38.12
+https://www.youtube.com/watch?v=dDeWWQWMM-Y  45.00
 
 
 https://github.com/NightClover-code/modern-ecommerce
