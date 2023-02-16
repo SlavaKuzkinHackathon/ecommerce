@@ -28,13 +28,21 @@ nest generate module roles
 nest generate controller roles
 nest generate service roles
 
+nest g module auth
+nest g controller auth
+nest g service auth
+
+
 npm i @nestjs/config
 npm i cross-env
 
 npm i @nestjs/swagger swagger-ui-express
 
+npm i @nestjs/jwt bcryptjs
 
-https://www.youtube.com/watch?v=dDeWWQWMM-Y  45.00
+
+
+https://www.youtube.com/watch?v=dDeWWQWMM-Y  55.25
 
 
 https://github.com/NightClover-code/modern-ecommerce
