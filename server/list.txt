@@ -42,8 +42,7 @@ npm i @nestjs/jwt bcryptjs
 
 
 
-https://www.youtube.com/watch?v=dDeWWQWMM-Y  55.25
-
+https://www.youtube.com/watch?v=dDeWWQWMM-Y  01.01.29
 
 https://github.com/NightClover-code/modern-ecommerce
 
