@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { RolesService } from 'src/roles/roles.service';
+import { AddRoleDto } from './dto/add-role.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './users.model';
 
@@ -12,7 +13,7 @@ export class UsersService {
 
     async createUser(dto: CreateUserDto) {
         const user = await this.userRepository.create(dto)
-        const role = await this.roleService.getRoleBayValue('USER')
+        const role = await this.roleService.getRoleBayValue('ADMIN')
         await user.$set('roles', [role.id])
         user.roles = [role]
         return user
@@ -28,4 +29,5 @@ export class UsersService {
         return user
     }
 
+    async addRole(dto: AddRoleDto){}
 }

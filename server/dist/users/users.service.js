@@ -24,7 +24,7 @@ let UsersService = class UsersService {
     }
     async createUser(dto) {
         const user = await this.userRepository.create(dto);
-        const role = await this.roleService.getRoleBayValue('USER');
+        const role = await this.roleService.getRoleBayValue('ADMIN');
         await user.$set('roles', [role.id]);
         user.roles = [role];
         return user;
@@ -37,6 +37,7 @@ let UsersService = class UsersService {
         const user = await this.userRepository.findOne({ where: { email }, include: { all: true } });
         return user;
     }
+    async addRole(dto) { }
 };
 UsersService = __decorate([
     (0, common_1.Injectable)(),
