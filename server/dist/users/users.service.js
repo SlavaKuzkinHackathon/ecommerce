@@ -44,9 +44,17 @@ let UsersService = class UsersService {
             await user.$add('role', role.id);
             return dto;
         }
-        throw new common_1.HttpException('пользователь или ролт не найдены', common_1.HttpStatus.NOT_FOUND);
+        throw new common_1.HttpException('пользователь или роль не найдены', common_1.HttpStatus.NOT_FOUND);
     }
     async ban(dto) {
+        const user = await this.userRepository.findByPk(dto.userId);
+        if (!user) {
+            throw new common_1.HttpException('пользователь не найден', common_1.HttpStatus.NOT_FOUND);
+        }
+        user.banned = true;
+        user.banReson = dto.banReason;
+        await user.save();
+        return user;
     }
 };
 UsersService = __decorate([

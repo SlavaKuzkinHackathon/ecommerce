@@ -37,11 +37,18 @@ export class UsersService {
             await user.$add('role', role.id)
             return dto
         }
-        throw new HttpException('пользователь или ролт не найдены', HttpStatus.NOT_FOUND)
+        throw new HttpException('пользователь или роль не найдены', HttpStatus.NOT_FOUND)
         
     }
 
     async ban(dto: BanUserDto){
-
+        const user = await this.userRepository.findByPk(dto.userId)
+        if(!user){
+            throw new HttpException('пользователь не найден', HttpStatus.NOT_FOUND)
+        }
+        user.banned = true
+        user.banReson = dto.banReason
+        await user.save()
+        return user
     }
 }

@@ -9,5 +9,5 @@ export declare class UsersController {
     create(userDto: CreateUserDto): Promise<User>;
     getAll(): Promise<User[]>;
     addRole(dto: AddRoleDto): Promise<AddRoleDto>;
-    ban(dto: BanUserDto): Promise<void>;
+    ban(dto: BanUserDto): Promise<User>;
 }
