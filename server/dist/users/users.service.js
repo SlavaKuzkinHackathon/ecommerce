@@ -37,7 +37,17 @@ let UsersService = class UsersService {
         const user = await this.userRepository.findOne({ where: { email }, include: { all: true } });
         return user;
     }
-    async addRole(dto) { }
+    async addRole(dto) {
+        const user = await this.userRepository.findByPk(dto.userId);
+        const role = await this.roleService.getRoleBayValue(dto.value);
+        if (role && user) {
+            await user.$add('role', role.id);
+            return dto;
+        }
+        throw new common_1.HttpException('пользователь или ролт не найдены', common_1.HttpStatus.NOT_FOUND);
+    }
+    async ban(dto) {
+    }
 };
 UsersService = __decorate([
     (0, common_1.Injectable)(),
